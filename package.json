@@ -1,0 +1,72 @@
+{
+  "$schema": "https://www.raycast.com/schemas/extension.json",
+  "name": "cardinal-search",
+  "title": "Cardinal Search",
+  "description": "Send Raycast input or selected text directly to Cardinal.",
+  "icon": "cardinal.png",
+  "author": "xiaoliangkk",
+  "license": "MIT",
+  "commands": [
+    {
+      "name": "search-cardinal",
+      "title": "Search Cardinal",
+      "description": "Send a query from Raycast to Cardinal.",
+      "mode": "no-view",
+      "arguments": [
+        {
+          "name": "query",
+          "placeholder": "query",
+          "type": "text",
+          "required": true
+        }
+      ]
+    },
+    {
+      "name": "send-selection",
+      "title": "Send Selection to Cardinal",
+      "description": "Send the currently selected text to Cardinal.",
+      "mode": "no-view"
+    },
+    {
+      "name": "open-cardinal",
+      "title": "Open Cardinal",
+      "description": "Open Cardinal from Raycast.",
+      "mode": "no-view"
+    }
+  ],
+  "preferences": [
+    {
+      "name": "cardinalAppName",
+      "title": "Application Name",
+      "description": "The process/application name used by macOS.",
+      "type": "textfield",
+      "required": true,
+      "default": "Cardinal"
+    },
+    {
+      "name": "cardinalAppPath",
+      "title": "Application Path",
+      "description": "Optional absolute path to Cardinal.app. Leave empty to open by app name.",
+      "type": "textfield",
+      "required": false,
+      "default": "/Applications/Cardinal.app"
+    }
+  ],
+  "dependencies": {
+    "@raycast/api": "^1.95.0"
+  },
+  "devDependencies": {
+    "@raycast/eslint-config": "^1.0.11",
+    "@types/node": "^22.10.2",
+    "eslint": "^8.57.1",
+    "prettier": "^3.4.2",
+    "typescript": "^5.7.2"
+  },
+  "scripts": {
+    "build": "ray build -e dist",
+    "dev": "ray develop",
+    "fix-lint": "ray lint --fix",
+    "lint": "ray lint",
+    "publish": "ray publish"
+  }
+}
