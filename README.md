@@ -28,3 +28,16 @@ npm run dev
 ```
 
 Use a Cardinal build that registers the `cardinal://` URL scheme.
+
+## Troubleshooting
+
+If Raycast shows `The development sources couldn't be located. Please re-link the project.`,
+open the extension from its current local directory and run:
+
+```bash
+npm run dev
+```
+
+This usually happens after moving the extension folder. If Raycast still shows
+an older development entry, remove or back up the stale folder under
+`~/.config/raycast/extensions/` and restart Raycast.
